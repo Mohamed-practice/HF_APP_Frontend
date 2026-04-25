@@ -67,7 +67,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       workbox: {
-        maximumFileSizeToCacheInBytes: 35000000, // 35MB
+        maximumFileSizeToCacheInBytes: 50000000, // 50MB
       },
       manifest: {
         name: 'HF APP',
@@ -87,7 +87,8 @@ export default defineConfig({
     }),
   ],
   optimizeDeps: {
-    include: ['react-simple-maps', 'd3-geo', 'topojson-client','@syncfusion/ej2-react-gantt']
+    include: ['react-simple-maps', 'd3-geo', 'topojson-client','@syncfusion/ej2-react-gantt'],
+    exclude: ['@boldreports/javascript-reporting-controls']
   },
   resolve: {
     alias: {
