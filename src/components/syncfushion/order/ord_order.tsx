@@ -1791,7 +1791,7 @@ const HeroFashionGrid131: React.FC = () => {
             <div style="display: flex; gap: 6px; max-width: 450px;">
 
               <!-- LEFT BIG IMAGE -->
-              <div style="padding: 12px;">
+              <div style="padding: 4px;">
                 <b>Order Image</b><br />
                 <img 
                   src="${imgSrc}" 
@@ -1800,7 +1800,7 @@ const HeroFashionGrid131: React.FC = () => {
               </div>
 
               <!-- RIGHT DYNAMIC GRID -->
-              <div style="display: flex; gap: 10px; padding: 12px;">
+              <div style="display: flex; gap: 10px; padding: 4px;">
                 ${imagesHtml}
               </div>
             </div>
