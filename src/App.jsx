@@ -22,8 +22,8 @@ import Sticker from "./components/Cutting/sticker production/App"
 import Bitcheck from "./components/Cutting/bit checking/App"
 import BitCheckingUI from "./components/Cutting/bit checking/BitcheckingPly";
 import Home_hw from "./components/fininace/holdwage/entry/hw_main";
-import BoldBi from "./components/syncfushion/DashboardListing/DashboardListing"
-import BoldReport from "./components/syncfushion/order/reportviewer"
+const BoldBi = React.lazy(()=>import("./components/syncfushion/DashboardListing/DashboardListing")) 
+const BoldReport = React.lazy(()=>import("./components/syncfushion/order/reportviewer")) 
 
 function App() {
 
