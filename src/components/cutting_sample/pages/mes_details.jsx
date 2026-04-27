@@ -253,7 +253,6 @@ const handleFinalSave = async () => {
         product,
         colour,
         size,
-        bundle_id,
         bf_ironing: bfIroningValue ? 1 : 0,
 af_ironing: afIroningValue ? 1 : 0,
         force_save: forceSave ? 1 : 0,  //  IMPORTANT
