@@ -16,27 +16,35 @@ jobs:
       with:
         persist-credentials: false
 
-    - name: Install dependencies
-      run: npm install --legacy-peer-deps
+    # ✅ Cache npm dependencies
+    - name: Cache npm
+      uses: actions/cache@v4
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
 
+    # ✅ Faster install
+    - name: Install dependencies
+      run: npm ci
+
+    # ✅ Faster + safer build
     - name: Build React app
-      run: npm run build
+      run: CI=false npm run build
 
     - name: Copy web.config
       run: copy web.config dist\web.config
 
-    # - name: Deploy to IIS folder
-    #   run: xcopy dist "D:\PRODUCTION_SOFTWEARE\frontend\dist" /E /H /C /I /Y
-
-    #  Deploy to PRODUCTION (main branch)
+    # ✅ Deploy only changed files (faster than xcopy)
     - name: Deploy to Production IIS
       if: github.ref == 'refs/heads/main'
-      run: xcopy dist "D:\PRODUCTION_SOFTWEARE\frontend\dist" /E /H /C /I /Y
+      run: robocopy dist D:\PRODUCTION_SOFTWEARE\frontend\dist /MIR
 
-    #  Deploy to DEVELOPMENT (dev branch)
     - name: Deploy to Dev IIS
       if: github.ref == 'refs/heads/dev'
-      run: xcopy dist "D:\DEV_SOFTWEARE\frontend\dist" /E /H /C /I /Y
+      run: robocopy dist D:\DEV_SOFTWEARE\frontend\dist /MIR
 
+    # ⚠️ Restart only if needed
     - name: Restart IIS
       run: iisreset
