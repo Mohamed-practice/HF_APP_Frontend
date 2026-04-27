@@ -22,7 +22,8 @@ import Sticker from "./components/Cutting/sticker production/App"
 import Bitcheck from "./components/Cutting/bit checking/App"
 import BitCheckingUI from "./components/Cutting/bit checking/BitcheckingPly";
 import Home_hw from "./components/fininace/holdwage/entry/hw_main";
-import Cut_sample from "./components/cutting_sample/main/cut_main"
+const BoldBi = React.lazy(()=>import("./components/syncfushion/DashboardListing/DashboardListing")) 
+const BoldReport = React.lazy(()=>import("./components/syncfushion/order/reportviewer")) 
 
 function App() {
 
@@ -215,8 +216,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-
-         <Route
+        <Route
           path="/holdwage/*"
           element={
             <ProtectedRoute>
@@ -228,16 +228,25 @@ function App() {
         />
 
         <Route
-          path="/cut_sample/*"
+          path="/boldbi/*"
           element={
             <ProtectedRoute>
               <ProtectedLayout>
-                <Cut_sample />
+                <BoldBi />
               </ProtectedLayout>
             </ProtectedRoute>
           }
         />
-        
+        <Route
+          path="/boldreport/*"
+          element={
+            <ProtectedRoute>
+              <ProtectedLayout>
+                <BoldReport />
+              </ProtectedLayout>
+            </ProtectedRoute>
+          }
+        />
         
 
       </Routes>

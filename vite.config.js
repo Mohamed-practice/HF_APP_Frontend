@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import path from 'path'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa' // Corrected import
@@ -17,7 +18,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       workbox: {
-        maximumFileSizeToCacheInBytes: 35000000, // 35MB
+        maximumFileSizeToCacheInBytes: 50000000, // 50MB
       },
       manifest: {
         name: 'HF APP',
@@ -37,7 +38,13 @@ export default defineConfig({
     }),
   ],
   optimizeDeps: {
-    include: ['react-simple-maps', 'd3-geo', 'topojson-client','@syncfusion/ej2-react-gantt']
+    include: ['react-simple-maps', 'd3-geo', 'topojson-client','@syncfusion/ej2-react-gantt'],
+    exclude: ['@boldreports/javascript-reporting-controls']
+  },
+  resolve: {
+    alias: {
+      'form-renderer.base.css': path.resolve(__dirname, 'node_modules/@syncfusion/ej2-react-form-renderer/styles/form-renderer.base.css')
+    }
   },
   server: {
     host: '0.0.0.0',
