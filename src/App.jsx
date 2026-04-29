@@ -20,9 +20,11 @@ import Home_1 from "./components/reports/main";
 import Ad_login from "./components/hr/advance/auth/ad_main";
 import Sticker from "./components/Cutting/sticker production/App"
 import Bitcheck from "./components/Cutting/bit checking/App"
+import Cutdel from "./components/Cutting/delivery/cut_main"
 import BitCheckingUI from "./components/Cutting/bit checking/BitcheckingPly";
 import Home_hw from "./components/fininace/holdwage/entry/hw_main";
 import In_login from "./components/Incentive&Debit/app/in_main";
+import Emp from "../src/components/production/pro_main";
 
 function App() {
 
@@ -95,6 +97,17 @@ function App() {
             <ProtectedRoute>
               <ProtectedLayout>
                 <Syncfushion />
+              </ProtectedLayout>
+            </ProtectedRoute>
+          }
+        />
+        
+        <Route
+          path="/allunit/*"
+          element={
+            <ProtectedRoute>
+              <ProtectedLayout>
+                <Emp />
               </ProtectedLayout>
             </ProtectedRoute>
           }
@@ -191,6 +204,16 @@ function App() {
             <ProtectedRoute>
               <ProtectedLayout>
                 <Sticker />
+              </ProtectedLayout>
+            </ProtectedRoute>
+          }
+        />
+         <Route
+          path="/cutdel/*"
+          element={
+            <ProtectedRoute>
+              <ProtectedLayout>
+                <Cutdel />
               </ProtectedLayout>
             </ProtectedRoute>
           }
