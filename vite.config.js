@@ -14,7 +14,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       workbox: {
-        maximumFileSizeToCacheInBytes: 30000000, // 30MB
+        maximumFileSizeToCacheInBytes: 50000000, // 50MB
       },
       manifest: {
         name: 'HF APP',
