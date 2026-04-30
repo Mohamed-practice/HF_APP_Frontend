@@ -23,11 +23,11 @@ import Home_1 from "./components/reports/main";
 import Ad_login from "./components/hr/advance/auth/ad_main";
 import Sticker from "./components/Cutting/sticker production/App"
 import Bitcheck from "./components/Cutting/bit checking/App"
+import Cutdel from "./components/Cutting/delivery/cut_main"
 import BitCheckingUI from "./components/Cutting/bit checking/BitcheckingPly";
 import Home_hw from "./components/fininace/holdwage/entry/hw_main";
-const BoldBi = lazy(()=>import("./components/syncfushion/DashboardListing/DashboardListing")) 
-const BoldReport = lazy(()=>import("./components/syncfushion/order/reportviewer")) 
-import Cut_sample from "./components/cutting_sample/main/cut_main"
+import In_login from "./components/Incentive&Debit/app/in_main";
+import Emp from "../src/components/production/pro_main";
 
 function App() {
 
@@ -100,6 +100,17 @@ function App() {
             <ProtectedRoute>
               <ProtectedLayout>
                 <Syncfushion />
+              </ProtectedLayout>
+            </ProtectedRoute>
+          }
+        />
+        
+        <Route
+          path="/allunit/*"
+          element={
+            <ProtectedRoute>
+              <ProtectedLayout>
+                <Emp />
               </ProtectedLayout>
             </ProtectedRoute>
           }
@@ -200,6 +211,16 @@ function App() {
             </ProtectedRoute>
           }
         />
+         <Route
+          path="/cutdel/*"
+          element={
+            <ProtectedRoute>
+              <ProtectedLayout>
+                <Cutdel />
+              </ProtectedLayout>
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/bit-checking/*"
           element={
@@ -232,36 +253,16 @@ function App() {
         />
 
         <Route
-          path="/boldbi/*"
+          path="/incdeb/*"
           element={
             <ProtectedRoute>
               <ProtectedLayout>
-                <BoldBi />
+                <In_login />
               </ProtectedLayout>
             </ProtectedRoute>
           }
         />
-        <Route
-          path="/boldreport/*"
-          element={
-            <ProtectedRoute>
-              <ProtectedLayout>
-                <BoldReport />
-              </ProtectedLayout>
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/cut_sample/*"
-          element={
-            <ProtectedRoute>
-              <ProtectedLayout>
-                <Cut_sample />
-              </ProtectedLayout>
-            </ProtectedRoute>
-          }
-        />
+        
         
 
       </Routes>
