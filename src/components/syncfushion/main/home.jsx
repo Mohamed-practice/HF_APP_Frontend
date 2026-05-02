@@ -4,7 +4,7 @@ import IframeBold from "../order/sync_iframe.jsx"
 import HrReportGrid from "../order/ord1 ok.tsx"
 import TallyBalanceReport from "../order/tally.tsx"
 import OrdPagination from "../order/ord_pagination.tsx"
-import PrnReportGrid from "../order/print.tsx"
+import PrnReportGrid from "../order/Print.tsx"
 import CardGrid from './Card.jsx';
 import Card1 from '../order/card/Card.jsx';
 import Card2 from '../order/card/Card2.jsx';
