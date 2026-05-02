@@ -191,14 +191,14 @@ function PivotView() {
       .replace(/-highContrast/i, "HighContrast");
   };
 
-  // // Order product images - replace with your image URLs
-  // const imageUrl = [
-  //   'https://app.herofashion.com/order_image/7045.jpg',
-  //   'https://app.herofashion.com/order_image/7055-AOP.jpg',
-  //   'https://app.herofashion.com/order_image/7063_AOP.jpg',
-  //   'https://app.herofashion.com/order_image/7064-AOP.jpg'
-  // ]
-  // let imageIndex = 0;
+  // Order product images - replace with your image URLs
+  const imageUrl = [
+    'https://app.herofashion.com/order_image/7045.jpg',
+    'https://app.herofashion.com/order_image/7055-AOP.jpg',
+    'https://app.herofashion.com/order_image/7063_AOP.jpg',
+    'https://app.herofashion.com/order_image/7064-AOP.jpg'
+  ]
+  let imageIndex = 0;
 
   // Custom cell rendering - modifies row headers and value cell display
   const queryCellInfo = (args: QueryCellInfoEventArgs) => {
@@ -216,8 +216,6 @@ function PivotView() {
       let indexes: any = Object.keys(indexObject || {});
 
       if (cell.axis === "row") {
-        const idx = indexes[0];
-        const data = datasource[idx];
         if (cell.rowSpan) {
           const element: HTMLElement = currentCellElement.firstElementChild as HTMLElement;
           // Level 0: Order number cell with image
@@ -225,13 +223,14 @@ function PivotView() {
             if (element) {
               element.innerHTML = `<div>
                 <a href="#" target="_blank"style="display:block;margin-bottom:5px;color:#007bff">${cell.formattedText}</a>
-                <img src="${data.img1}" alt="No Img" width="75" height="75" />
+                <img src="${imageUrl[imageIndex]}" alt="No Img" width="75" height="75" />
               </div>`;
               element.style.display = "flex";
               element.style.flexDirection = "column";
               element.style.justifyContent = "center";
               element.style.alignItems = "center";
             }
+            imageIndex = (imageIndex + 1) % 4;
           }
           // Level 1: Order details card - modify HTML to show/hide fields
           else if (cell.level === 1) {
