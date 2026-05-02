@@ -1,8 +1,8 @@
 import React from "react";
 import { 
-  FaChartPie, FaCheck, FaWallet, FaViadeo, FaAudible, FaDiceD20, FaDisease, FaDrupal,FaAngellist,
-  FaDribbble, FaRegSmileWink, FaTencentWeibo, FaMixcloud,FaHeartbeat, FaMailchimp,
-  FaCodepen, FaAirbnb, FaDove, FaPushed, FaRaspberryPi, FaPaw,
+  FaChartPie, FaCheck, FaWallet, FaViadeo, FaAudible, FaDiceD20, FaDisease, FaDrupal,FaAngellist, FaDice,
+  FaDribbble, FaRegSmileWink, FaTencentWeibo, FaMixcloud,FaHeartbeat, FaMailchimp, FaDrum, FaFeatherAlt,
+  FaCodepen, FaAirbnb, FaDove, FaPushed, FaRaspberryPi, FaPaw, FaGithub,
   FaRegPaperPlane, FaVirus, FaBity , FaVolleyballBall,
   FaReact, FaGalacticRepublic,FaCodiepie, FaDemocrat, FaGrav
 } from "react-icons/fa";
@@ -555,7 +555,7 @@ const Dashboard = () => {
           >
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-green-200 rounded-full opacity-40 group-hover:scale-150 transition duration-500"></div>
             <div className="w-14 h-14 flex items-center justify-center bg-green-100 rounded-xl mb-4 group-hover:rotate-12 transition duration-300">
-              <FaDiceD20 className="text-green-500 text-2xl" />
+              <FaDice className="text-green-500 text-2xl" />
             </div>
             <h2 className="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition">
             order data optimize with Ai 
@@ -571,7 +571,7 @@ const Dashboard = () => {
           >
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-pink-200 rounded-full opacity-40 group-hover:scale-150 transition duration-500"></div>
             <div className="w-14 h-14 flex items-center justify-center bg-pink-100 rounded-xl mb-4 group-hover:rotate-12 transition duration-300">
-              <FaDiceD20 className="text-pink-500 text-2xl" />
+              <FaDrum className="text-pink-500 text-2xl" />
             </div>
             <h2 className="text-lg font-semibold text-gray-800 group-hover:text-pink-600 transition">
             Form builder
@@ -587,7 +587,7 @@ const Dashboard = () => {
           >
             <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full opacity-40 group-hover:scale-150 transition duration-500"></div>
             <div className="w-14 h-14 flex items-center justify-center  rounded-xl mb-4 group-hover:rotate-12 transition duration-300">
-              <FaDiceD20 className="text-2xl" />
+              <FaFeatherAlt className="text-2xl" />
             </div>
             <h2 className="text-lg font-semibold text-gray-800 transition">
             Word Document
@@ -603,7 +603,7 @@ const Dashboard = () => {
           >
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-fuchsia-200 rounded-full opacity-40 group-hover:scale-150 transition duration-500"></div>
             <div className="w-14 h-14 flex items-center justify-center bg-fuchsia-100 rounded-xl mb-4 group-hover:rotate-12 transition duration-300">
-              <FaDiceD20 className="text-fuchsia-500 text-2xl" />
+              <FaGithub className="text-fuchsia-500 text-2xl" />
             </div>
             <h2 className="text-lg font-semibold text-gray-800 group-hover:text-fuchsia-600 transition">
             Xl Sheet
