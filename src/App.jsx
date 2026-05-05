@@ -28,6 +28,7 @@ import BitCheckingUI from "./components/Cutting/bit checking/BitcheckingPly";
 import Home_hw from "./components/fininace/holdwage/entry/hw_main";
 import In_login from "./components/Incentive&Debit/app/in_main";
 import Emp from "../src/components/production/pro_main";
+import Re_home from "../src/components/hr/reports/re_main";
 
 function App() {
 
@@ -115,6 +116,18 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+         <Route
+          path="/hr/*"
+          element={
+            <ProtectedRoute>
+              <ProtectedLayout>
+                <Re_home />
+              </ProtectedLayout>
+            </ProtectedRoute>
+          }
+        />
+        
 
         <Route
           path="/ord_page/*"
