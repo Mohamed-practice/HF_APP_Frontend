@@ -143,7 +143,16 @@ export default function Rowing_defects() {
       setCounts({});
       setRemarks(""); // Reset remarks for next piece
     } catch (err) {
-      alert("Failed to save piece ❌");
+      console.log("FULL ERROR:", err);
+
+  const errorMessage =
+    err.response?.data?.message ||   // backend custom message
+    err.response?.data ||            // full backend response
+    err.message ||                   // axios/network error
+    "Unknown error";
+
+  alert(`Failed to save piece ❌\n${JSON.stringify(errorMessage)}`);
+      // alert("Failed to save piece ❌");
     }
   };
 
