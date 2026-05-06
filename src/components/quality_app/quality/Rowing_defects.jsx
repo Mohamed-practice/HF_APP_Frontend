@@ -99,11 +99,20 @@ export default function Rowing_defects() {
     }
 
     const defectsArray = Object.entries(counts).map(([id, count]) => {
+      // const defect = qcdatas.find((item) => item.id === Number(id));
+      // return {
+      //   mistake_name: defect.name,
+      //   mistake_count: count,
+      //   category: defect.category,
+      // };
+
+
       const defect = qcdatas.find((item) => item.id === Number(id));
+
       return {
-        mistake_name: defect.name,
+        mistake_name: defect?.name || "unknown",
         mistake_count: count,
-        category: defect.category,
+        category: defect?.category || "unknown",
       };
     }).filter(d => d.mistake_count > 0);
 
@@ -143,17 +152,15 @@ export default function Rowing_defects() {
       setCounts({});
       setRemarks(""); // Reset remarks for next piece
     } catch (err) {
-      console.log("FULL ERROR:", err);
+  console.log("ERROR:", err);
 
-  const errorMessage =
-    err.response?.data?.message ||   // backend custom message
-    err.response?.data ||            // full backend response
-    err.message ||                   // axios/network error
-    "Unknown error";
+  const msg =
+    err.response?.data
+      ? JSON.stringify(err.response.data)
+      : err.message;
 
-  alert(`Failed to save piece ❌\n${JSON.stringify(errorMessage)}`);
-      // alert("Failed to save piece ❌");
-    }
+  alert("Failed to save piece ❌\n" + msg);
+}
   };
 
   const handleFinalSubmit = async () => {
