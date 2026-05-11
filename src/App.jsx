@@ -33,7 +33,7 @@ import Cutting_measurement from "./components/cutting_mesurement_check/main/main
 import Word from "./components/syncfushion/order/Word/Word"
 import Pdf from "./components/syncfushion/order/Pdf/Pdf"
 import Xlsheet from './components/syncfushion/order/Xlsheet/Xlsheet'
-import GanttChart from "./components/syncfushion/order/Gantt Chart/GanttChart";
+import GanttChart from "./components/syncfushion/order/Gantt_Chart/GanttChart";
 import Kanban from './components/syncfushion/order/Kanban/Kanban';
 import Pivot from "./components/syncfushion/order/pivot/Pivotview";
 import WebSocket from './components/syncfushion/order/web_order';
@@ -44,6 +44,7 @@ import Form from './components/syncfushion/order/Form/Form'
 import FormBuilder from './components/syncfushion/order/FormBuilder/formbuilder'
 import Fi_home  from "./components/fininace/reports/fi_main";
 import Del_home from "./components/Cutting/delivery/cut_main";
+import Imp_home from "./components/implemantation_reports/imp_main";
 
 
 function App() {
@@ -230,6 +231,16 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/incdeb/*"
+          element={
+            <ProtectedRoute>
+              <ProtectedLayout>
+                <In_login />
+              </ProtectedLayout>
+            </ProtectedRoute>
+          }
+        />
           <Route
           path="/stick-prod/*"
           element={
@@ -336,7 +347,7 @@ function App() {
           }
         />
                 
-
+{/* 
         <Route
           path="/word/*"
           element={
@@ -346,9 +357,9 @@ function App() {
               </ProtectedLayout>
             </ProtectedRoute>
           }
-        />
+        />  */}
 
-        <Route
+        {/* <Route
           path="/xlsheet/*"
           element={
             <ProtectedRoute>
@@ -357,9 +368,9 @@ function App() {
               </ProtectedLayout>
             </ProtectedRoute>
           }
-        />
+        /> */}
 
-        <Route
+        {/* <Route
           path="/pdf/*"
           element={
             <ProtectedRoute>
@@ -368,9 +379,9 @@ function App() {
               </ProtectedLayout>
             </ProtectedRoute>
           }
-        />
+        /> */}
 
-        <Route
+        {/* <Route
           path="/websocket/*"
           element={
             <ProtectedRoute>
@@ -379,7 +390,7 @@ function App() {
               </ProtectedLayout>
             </ProtectedRoute>
           }
-        />
+        /> */}
 
         <Route
           path="/sy-order/block_edit/*"
@@ -463,6 +474,16 @@ function App() {
             <ProtectedRoute>
               <ProtectedLayout>
                 <Form/>
+              </ProtectedLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/imp/*"
+          element={
+            <ProtectedRoute>
+              <ProtectedLayout>
+                <Imp_home/>
               </ProtectedLayout>
             </ProtectedRoute>
           }
